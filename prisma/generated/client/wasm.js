@@ -107,123 +107,24 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.UserScalarFieldEnum = {
-  id: 'id',
-  email: 'email',
+exports.Prisma.UsersScalarFieldEnum = {
+  ID: 'ID',
+  username: 'username',
   password: 'password',
-  role: 'role',
-  is_verified: 'is_verified'
+  real_name: 'real_name',
+  token: 'token',
+  created_date: 'created_date',
+  updated_date: 'updated_date'
 };
 
-exports.Prisma.Job_seekerScalarFieldEnum = {
-  id: 'id',
+exports.Prisma.TodosScalarFieldEnum = {
+  ID: 'ID',
   user_id: 'user_id',
-  fullname: 'fullname',
-  phone_number: 'phone_number',
-  city: 'city',
-  dob: 'dob',
-  gender: 'gender',
-  description: 'description'
-};
-
-exports.Prisma.CompanyScalarFieldEnum = {
-  id: 'id',
-  user_id: 'user_id',
-  name: 'name',
-  city: 'city',
-  about: 'about',
-  logo: 'logo',
-  picture: 'picture'
-};
-
-exports.Prisma.JobsScalarFieldEnum = {
-  id: 'id',
-  company_id: 'company_id',
   title: 'title',
   description: 'description',
-  employment_type: 'employment_type',
-  min_salary: 'min_salary',
-  gender: 'gender',
-  max_salary: 'max_salary',
-  date_posted: 'date_posted'
-};
-
-exports.Prisma.QuestionsScalarFieldEnum = {
-  id: 'id',
-  job_id: 'job_id',
-  question_1: 'question_1',
-  question_2: 'question_2',
-  question_3: 'question_3'
-};
-
-exports.Prisma.AnswersScalarFieldEnum = {
-  id: 'id',
-  job_id: 'job_id',
-  job_application_id: 'job_application_id',
-  answer_1: 'answer_1',
-  answer_2: 'answer_2',
-  answer_3: 'answer_3'
-};
-
-exports.Prisma.List_certificateScalarFieldEnum = {
-  id: 'id',
-  job_seeker_id: 'job_seeker_id',
-  name: 'name',
-  description: 'description'
-};
-
-exports.Prisma.SkillsScalarFieldEnum = {
-  id: 'id',
-  name: 'name'
-};
-
-exports.Prisma.List_disabilityScalarFieldEnum = {
-  id: 'id',
-  job_seeker_id: 'job_seeker_id',
-  disability_id: 'disability_id'
-};
-
-exports.Prisma.Job_applicationScalarFieldEnum = {
-  id: 'id',
-  job_seeker_id: 'job_seeker_id',
-  job_id: 'job_id',
-  company_id: 'company_id',
   status: 'status',
-  cover_letter: 'cover_letter'
-};
-
-exports.Prisma.DisabilityScalarFieldEnum = {
-  id: 'id',
-  category_id: 'category_id',
-  name: 'name'
-};
-
-exports.Prisma.AbilityScalarFieldEnum = {
-  id: 'id',
-  name: 'name'
-};
-
-exports.Prisma.List_abilityScalarFieldEnum = {
-  id: 'id',
-  job_id: 'job_id',
-  ability_id: 'ability_id'
-};
-
-exports.Prisma.Job_seeker_skillsScalarFieldEnum = {
-  id: 'id',
-  job_seeker_id: 'job_seeker_id',
-  skill_id: 'skill_id'
-};
-
-exports.Prisma.CategoryScalarFieldEnum = {
-  id: 'id',
-  name: 'name'
-};
-
-exports.Prisma.Required_skillsScalarFieldEnum = {
-  id: 'id',
-  job_id: 'job_id',
-  skill_id: 'skill_id'
+  created_date: 'created_date',
+  updated_date: 'updated_date'
 };
 
 exports.Prisma.SortOrder = {
@@ -243,22 +144,8 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  User: 'User',
-  Job_seeker: 'Job_seeker',
-  Company: 'Company',
-  Jobs: 'Jobs',
-  Questions: 'Questions',
-  Answers: 'Answers',
-  List_certificate: 'List_certificate',
-  Skills: 'Skills',
-  List_disability: 'List_disability',
-  Job_application: 'Job_application',
-  Disability: 'Disability',
-  Ability: 'Ability',
-  List_ability: 'List_ability',
-  Job_seeker_skills: 'Job_seeker_skills',
-  Category: 'Category',
-  Required_skills: 'Required_skills'
+  Users: 'Users',
+  Todos: 'Todos'
 };
 
 /**
