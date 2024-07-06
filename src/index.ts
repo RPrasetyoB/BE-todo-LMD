@@ -1,5 +1,6 @@
 import express from "express";
 import * as dotenv from "dotenv";
+import * as functions from "firebase-functions";
 import errorCatch from "./middlewares/errorCatch";
 import middleWares from "./middlewares";
 import router from "./routes";
@@ -30,5 +31,5 @@ app.use(errorCatch);
 app.listen(server_port, () => {
   console.log(`server listening at http://localhost:${server_port}`);
 });
-// export app for vercel deployment
-export default app;
+
+export const be_todo = functions.https.onRequest(app);
