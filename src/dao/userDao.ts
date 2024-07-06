@@ -1,10 +1,10 @@
-import ErrorHandler from "../utils/errorHandler";
+import ErrorHandler from "../helper/errorHandler";
 import bcryptjs from "bcryptjs";
 import { prisma } from "../config/dbConnection";
-import { registrationData } from "../utils/type";
+import { RegistrationData } from "../types/type";
 
 // create new user to DB
-const postCreateUser = async (userData: registrationData) => {
+const postCreateUser = async (userData: RegistrationData) => {
   try {
     const { real_name, username, password } = userData;
     const hashedPassword = await bcryptjs.hash(password, 10);
@@ -82,6 +82,7 @@ const getUserByID = async (userId: number) => {
         ID: true,
         username: true,
         real_name: true,
+        token: true,
         created_date: true,
         updated_date: true,
       },
