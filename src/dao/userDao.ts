@@ -105,4 +105,28 @@ const getUserByID = async (userId: number) => {
   }
 };
 
-export { postCreateUser, getUserByUsername, putUpdateToken, getUserByID };
+// query DB below only for unit testing reason
+const deleteExistingUser = async (username: string) => {
+  try {
+    const user = await prisma.users.delete({
+      where: { username: username },
+    });
+    if (!user) {
+      throw new ErrorHandler({
+        success: false,
+        message: "user not found",
+        status: 404,
+      });
+    }
+    return user;
+  } catch (error: any) {
+    console.error(error);
+    throw new ErrorHandler({
+      success: false,
+      status: error.status,
+      message: error.message,
+    });
+  }
+};
+
+export { postCreateUser, getUserByUsername, putUpdateToken, getUserByID, deleteExistingUser };

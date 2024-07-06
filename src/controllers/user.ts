@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { userProfilService } from "../services/userService";
+import { deleteExistingUserService, userProfilService } from "../services/userService";
 import { loggedUser } from "../utils/decodedToken";
 
 // user profile

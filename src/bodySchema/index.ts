@@ -11,9 +11,16 @@ export const loginSchema = z.object({
   password: z.string({ message: "required" }),
 });
 
-export const createTodoSchema = z.object({
+export const todoSchema = z.object({
   title: z.string({ message: "required" }),
   description: z.string({ message: "required" }),
+  status: z.enum(["not started", "in-progress", "completed"], {
+    required_error: "required",
+    message: "should be 'not started','in-progress', or 'completed'",
+  }),
+});
+
+export const updateStatusSchema = z.object({
   status: z.enum(["not started", "in-progress", "completed"], {
     required_error: "required",
     message: "should be 'not started','in-progress', or 'completed'",
