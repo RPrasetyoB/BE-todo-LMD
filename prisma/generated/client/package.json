@@ -1,5 +1,5 @@
 {
-  "name": "prisma-client-e37011ca36565763d6d32a9d0e0735fa5185272179713ea10cf5aeb1b704fbd6",
+  "name": "prisma-client-e96fc7d723a0b8d74d54bc72e7a7ac0998fb97b528ea74b108ce45cbad9f5519",
   "main": "index.js",
   "types": "index.d.ts",
   "browser": "index-browser.js",
@@ -7,28 +7,34 @@
     "./package.json": "./package.json",
     ".": {
       "require": {
-        "types": "./default.d.ts",
-        "node": "./default.js",
+        "node": "./index.js",
         "edge-light": "./wasm.js",
         "workerd": "./wasm.js",
         "worker": "./wasm.js",
-        "browser": "./index-browser.js"
+        "browser": "./index-browser.js",
+        "default": "./index.js"
       },
       "import": {
-        "types": "./default.d.ts",
-        "node": "./default.js",
+        "node": "./index.js",
         "edge-light": "./wasm.js",
         "workerd": "./wasm.js",
         "worker": "./wasm.js",
-        "browser": "./index-browser.js"
+        "browser": "./index-browser.js",
+        "default": "./index.js"
       },
-      "default": "./default.js"
+      "default": "./index.js"
     },
     "./edge": {
       "types": "./edge.d.ts",
       "require": "./edge.js",
       "import": "./edge.js",
       "default": "./edge.js"
+    },
+    "./react-native": {
+      "types": "./react-native.d.ts",
+      "require": "./react-native.js",
+      "import": "./react-native.js",
+      "default": "./react-native.js"
     },
     "./extension": {
       "types": "./extension.d.ts",
@@ -37,16 +43,16 @@
       "default": "./extension.js"
     },
     "./index-browser": {
-      "types": "./default.d.ts",
+      "types": "./index.d.ts",
       "require": "./index-browser.js",
       "import": "./index-browser.js",
       "default": "./index-browser.js"
     },
     "./index": {
-      "types": "./default.d.ts",
-      "require": "./default.js",
-      "import": "./default.js",
-      "default": "./default.js"
+      "types": "./index.d.ts",
+      "require": "./index.js",
+      "import": "./index.js",
+      "default": "./index.js"
     },
     "./wasm": {
       "types": "./wasm.d.ts",
@@ -73,6 +79,6 @@
     },
     "./*": "./*"
   },
-  "version": "5.10.2",
+  "version": "5.16.1",
   "sideEffects": false
 }

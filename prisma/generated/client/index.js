@@ -21,7 +21,7 @@ const {
   warnOnce,
   defineDmmfProperty,
   Public,
-  detectRuntime,
+  getRuntime
 } = require('./runtime/library.js')
 
 
@@ -31,12 +31,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 5.10.2
- * Query Engine version: 5a9203d0590c951969e85a7d07215503f4672eb9
+ * Prisma Client JS version: 5.16.1
+ * Query Engine version: 34ace0eb2704183d2c05b60b52fba5c43c13f303
  */
 Prisma.prismaVersion = {
-  client: "5.10.2",
-  engine: "5a9203d0590c951969e85a7d07215503f4672eb9"
+  client: "5.16.1",
+  engine: "34ace0eb2704183d2c05b60b52fba5c43c13f303"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -153,6 +153,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
+    "sourceFilePath": "D:\\repository\\interview\\BE-todo-LMD\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -160,8 +161,8 @@ const config = {
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../..",
-  "clientVersion": "5.10.2",
-  "engineVersion": "5a9203d0590c951969e85a7d07215503f4672eb9",
+  "clientVersion": "5.16.1",
+  "engineVersion": "34ace0eb2704183d2c05b60b52fba5c43c13f303",
   "datasourceNames": [
     "db"
   ],
@@ -175,8 +176,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\r\n  provider = \"prisma-client-js\"\r\n  output   = \"./generated/client\"\r\n}\r\n\r\ndatasource db {\r\n  provider = \"postgresql\"\r\n  url      = env(\"DB_URL\")\r\n}\r\n\r\nmodel Users {\r\n  ID           Int      @id @default(autoincrement())\r\n  username     String   @unique\r\n  password     String\r\n  real_name    String\r\n  token        String?\r\n  created_date DateTime @default(now())\r\n  updated_date DateTime @updatedAt\r\n  Todos        Todos[]\r\n}\r\n\r\nmodel Todos {\r\n  ID           Int      @id @default(autoincrement())\r\n  user_id      Int\r\n  title        String\r\n  description  String\r\n  status       String\r\n  created_date DateTime @default(now())\r\n  updated_date DateTime @updatedAt\r\n  user         Users    @relation(fields: [user_id], references: [ID], onDelete: Cascade)\r\n\r\n  @@index([user_id])\r\n}\r\n",
-  "inlineSchemaHash": "b829f00bbfa2b730a664527b80eb07288a64e09888ad145cd90881e6622c6f8a",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/client\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DB_URL\")\n}\n\nmodel Users {\n  ID           Int      @id @default(autoincrement())\n  username     String   @unique\n  password     String\n  real_name    String\n  token        String?\n  created_date DateTime @default(now())\n  updated_date DateTime @updatedAt\n  Todos        Todos[]\n}\n\nmodel Todos {\n  ID           Int      @id @default(autoincrement())\n  user_id      Int\n  title        String\n  description  String\n  status       String\n  created_date DateTime @default(now())\n  updated_date DateTime @updatedAt\n  user         Users    @relation(fields: [user_id], references: [ID], onDelete: Cascade)\n\n  @@index([user_id])\n}\n",
+  "inlineSchemaHash": "ec946ebbfa5f455f614c384e875690c22b49c3d1800267d9d95c9f8b481eb6f9",
   "copyEngine": true
 }
 
