@@ -11,13 +11,19 @@ declare global {
   }
 }
 
-interface registrationData {
+interface RegistrationData {
   real_name: string;
   username: string;
   password: string;
 }
 
-interface loginData {
+interface LoginData {
   username: string;
   password: string;
+}
+
+interface TodoData {
+  title: string;
+  description: string;
+  status: string;
 }

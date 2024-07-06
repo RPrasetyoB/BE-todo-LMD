@@ -1,4 +1,4 @@
-// utils/errorHandler.ts
+// custom error handler
 class ErrorHandler extends Error {
   public success: boolean;
   public status: number;
@@ -13,10 +13,10 @@ class ErrorHandler extends Error {
     message: string | string[];
     status: number;
   }) {
-    super(typeof message === "string" ? message : message?.join(", "));
+    super();
     this.success = success;
     this.status = status;
-    this.message = typeof message === "string" ? message : message?.join(", ");
+    this.message = typeof message === "string" ? message : message?.join(" | ");
   }
 }
 

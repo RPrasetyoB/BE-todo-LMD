@@ -1,7 +1,7 @@
 // middleware/validationMiddleware.ts
 import { Request, Response, NextFunction } from "express";
 import { z, ZodError } from "zod";
-import ErrorHandler from "../utils/errorHandler";
+import ErrorHandler from "../helper/errorHandler";
 
 export function validateData(schema: z.ZodObject<any, any>) {
   return (req: Request, res: Response, next: NextFunction) => {
@@ -13,7 +13,7 @@ export function validateData(schema: z.ZodObject<any, any>) {
         const errorMessages = error.errors.map(issue => `${issue.path.join(".")} ${issue.message}`);
         throw new ErrorHandler({
           success: false,
-          status: 400, // Adjust status code as per your application's needs
+          status: 400,
           message: errorMessages,
         });
       } else {

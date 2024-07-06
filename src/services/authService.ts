@@ -1,12 +1,12 @@
-import ErrorHandler from "../utils/errorHandler";
+import ErrorHandler from "../helper/errorHandler";
 import bcryptjs from "bcryptjs";
 import * as jwt from "jsonwebtoken";
-import { loginData, registrationData } from "../utils/type";
+import { LoginData, RegistrationData } from "../types/type";
 import { getUserByUsername, postCreateUser, putUpdateToken } from "../dao/userDao";
 import { JWT_SIGN } from "../utils/env";
 
 // registration
-const userRegisterService = async (userData: registrationData) => {
+const userRegisterService = async (userData: RegistrationData) => {
   const { username } = userData;
   try {
     const checkUsername = await getUserByUsername(username);
@@ -34,7 +34,7 @@ const userRegisterService = async (userData: registrationData) => {
 };
 
 // login
-const userLoginService = async (userData: loginData) => {
+const userLoginService = async (userData: LoginData) => {
   const { username, password } = userData;
   try {
     const user = await getUserByUsername(username);

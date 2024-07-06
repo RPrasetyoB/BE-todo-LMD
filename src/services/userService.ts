@@ -1,6 +1,7 @@
 import { getUserByID } from "../dao/userDao";
-import ErrorHandler from "../utils/errorHandler";
+import ErrorHandler from "../helper/errorHandler";
 
+// get profile
 const userProfilService = async (userId: number) => {
   try {
     const user = await getUserByID(userId);

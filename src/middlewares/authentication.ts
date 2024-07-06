@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { getToken, loggedUser } from "../utils/decodedToken";
-import ErrorHandler from "../utils/errorHandler";
+import ErrorHandler from "../helper/errorHandler";
 
 const auth = () => {
   return async (req: Request, res: Response, next: NextFunction) => {
@@ -9,7 +9,6 @@ const auth = () => {
       if (!decodedToken) {
         res.status(401).json({
           success: false,
-          status: 401,
           message: "unauthorized, please login",
         });
       }

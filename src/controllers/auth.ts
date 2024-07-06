@@ -1,12 +1,11 @@
 import { Request, Response, NextFunction } from "express";
 import { userLoginService, userRegisterService } from "../services/authService";
-import { loginData, registrationData } from "../utils/type";
+import { LoginData, RegistrationData } from "../types/type";
 
 // user register
 const userRegister = async (req: Request, res: Response, next: NextFunction) => {
+  const userData: RegistrationData = req.body;
   try {
-    const userData: registrationData = req.body;
-    req.body;
     const result = await userRegisterService(userData);
     if (result.success) {
       res.status(200).json({
@@ -22,8 +21,8 @@ const userRegister = async (req: Request, res: Response, next: NextFunction) => 
 
 // user login
 const userLogin = async (req: Request, res: Response, next: NextFunction) => {
+  const userData: LoginData = req.body;
   try {
-    const userData: loginData = req.body;
     const result = await userLoginService(userData);
     if (result.success) {
       res.status(200).json({
