@@ -1993,13 +1993,11 @@ export namespace Prisma {
   export type TodosAvgAggregateOutputType = {
     ID: number | null
     user_id: number | null
-    status: number | null
   }
 
   export type TodosSumAggregateOutputType = {
     ID: number | null
     user_id: number | null
-    status: number | null
   }
 
   export type TodosMinAggregateOutputType = {
@@ -2007,7 +2005,7 @@ export namespace Prisma {
     user_id: number | null
     title: string | null
     description: string | null
-    status: number | null
+    status: string | null
     created_date: Date | null
     updated_date: Date | null
   }
@@ -2017,7 +2015,7 @@ export namespace Prisma {
     user_id: number | null
     title: string | null
     description: string | null
-    status: number | null
+    status: string | null
     created_date: Date | null
     updated_date: Date | null
   }
@@ -2037,13 +2035,11 @@ export namespace Prisma {
   export type TodosAvgAggregateInputType = {
     ID?: true
     user_id?: true
-    status?: true
   }
 
   export type TodosSumAggregateInputType = {
     ID?: true
     user_id?: true
-    status?: true
   }
 
   export type TodosMinAggregateInputType = {
@@ -2168,7 +2164,7 @@ export namespace Prisma {
     user_id: number
     title: string
     description: string
-    status: number
+    status: string
     created_date: Date
     updated_date: Date
     _count: TodosCountAggregateOutputType | null
@@ -2228,7 +2224,7 @@ export namespace Prisma {
       user_id: number
       title: string
       description: string
-      status: number
+      status: string
       created_date: Date
       updated_date: Date
     }, ExtArgs["result"]["todos"]>
@@ -2630,7 +2626,7 @@ export namespace Prisma {
     readonly user_id: FieldRef<"Todos", 'Int'>
     readonly title: FieldRef<"Todos", 'String'>
     readonly description: FieldRef<"Todos", 'String'>
-    readonly status: FieldRef<"Todos", 'Int'>
+    readonly status: FieldRef<"Todos", 'String'>
     readonly created_date: FieldRef<"Todos", 'DateTime'>
     readonly updated_date: FieldRef<"Todos", 'DateTime'>
   }
@@ -3163,7 +3159,7 @@ export namespace Prisma {
     user_id?: IntFilter<"Todos"> | number
     title?: StringFilter<"Todos"> | string
     description?: StringFilter<"Todos"> | string
-    status?: IntFilter<"Todos"> | number
+    status?: StringFilter<"Todos"> | string
     created_date?: DateTimeFilter<"Todos"> | Date | string
     updated_date?: DateTimeFilter<"Todos"> | Date | string
     user?: XOR<UsersRelationFilter, UsersWhereInput>
@@ -3188,7 +3184,7 @@ export namespace Prisma {
     user_id?: IntFilter<"Todos"> | number
     title?: StringFilter<"Todos"> | string
     description?: StringFilter<"Todos"> | string
-    status?: IntFilter<"Todos"> | number
+    status?: StringFilter<"Todos"> | string
     created_date?: DateTimeFilter<"Todos"> | Date | string
     updated_date?: DateTimeFilter<"Todos"> | Date | string
     user?: XOR<UsersRelationFilter, UsersWhereInput>
@@ -3217,7 +3213,7 @@ export namespace Prisma {
     user_id?: IntWithAggregatesFilter<"Todos"> | number
     title?: StringWithAggregatesFilter<"Todos"> | string
     description?: StringWithAggregatesFilter<"Todos"> | string
-    status?: IntWithAggregatesFilter<"Todos"> | number
+    status?: StringWithAggregatesFilter<"Todos"> | string
     created_date?: DateTimeWithAggregatesFilter<"Todos"> | Date | string
     updated_date?: DateTimeWithAggregatesFilter<"Todos"> | Date | string
   }
@@ -3296,7 +3292,7 @@ export namespace Prisma {
   export type TodosCreateInput = {
     title: string
     description: string
-    status: number
+    status: string
     created_date?: Date | string
     updated_date?: Date | string
     user: UsersCreateNestedOneWithoutTodosInput
@@ -3307,7 +3303,7 @@ export namespace Prisma {
     user_id: number
     title: string
     description: string
-    status: number
+    status: string
     created_date?: Date | string
     updated_date?: Date | string
   }
@@ -3315,7 +3311,7 @@ export namespace Prisma {
   export type TodosUpdateInput = {
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
     created_date?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UsersUpdateOneRequiredWithoutTodosNestedInput
@@ -3326,7 +3322,7 @@ export namespace Prisma {
     user_id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
     created_date?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -3336,7 +3332,7 @@ export namespace Prisma {
     user_id: number
     title: string
     description: string
-    status: number
+    status: string
     created_date?: Date | string
     updated_date?: Date | string
   }
@@ -3344,7 +3340,7 @@ export namespace Prisma {
   export type TodosUpdateManyMutationInput = {
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
     created_date?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -3354,7 +3350,7 @@ export namespace Prisma {
     user_id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
     created_date?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -3548,7 +3544,6 @@ export namespace Prisma {
   export type TodosAvgOrderByAggregateInput = {
     ID?: SortOrder
     user_id?: SortOrder
-    status?: SortOrder
   }
 
   export type TodosMaxOrderByAggregateInput = {
@@ -3574,7 +3569,6 @@ export namespace Prisma {
   export type TodosSumOrderByAggregateInput = {
     ID?: SortOrder
     user_id?: SortOrder
-    status?: SortOrder
   }
 
   export type TodosCreateNestedManyWithoutUserInput = {
@@ -3792,7 +3786,7 @@ export namespace Prisma {
   export type TodosCreateWithoutUserInput = {
     title: string
     description: string
-    status: number
+    status: string
     created_date?: Date | string
     updated_date?: Date | string
   }
@@ -3801,7 +3795,7 @@ export namespace Prisma {
     ID?: number
     title: string
     description: string
-    status: number
+    status: string
     created_date?: Date | string
     updated_date?: Date | string
   }
@@ -3840,7 +3834,7 @@ export namespace Prisma {
     user_id?: IntFilter<"Todos"> | number
     title?: StringFilter<"Todos"> | string
     description?: StringFilter<"Todos"> | string
-    status?: IntFilter<"Todos"> | number
+    status?: StringFilter<"Todos"> | string
     created_date?: DateTimeFilter<"Todos"> | Date | string
     updated_date?: DateTimeFilter<"Todos"> | Date | string
   }
@@ -3903,7 +3897,7 @@ export namespace Prisma {
     ID?: number
     title: string
     description: string
-    status: number
+    status: string
     created_date?: Date | string
     updated_date?: Date | string
   }
@@ -3911,7 +3905,7 @@ export namespace Prisma {
   export type TodosUpdateWithoutUserInput = {
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
     created_date?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -3920,7 +3914,7 @@ export namespace Prisma {
     ID?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
     created_date?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -3929,7 +3923,7 @@ export namespace Prisma {
     ID?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    status?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
     created_date?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
   }

@@ -24,7 +24,7 @@ model Todos {
   user_id      Int
   title        String
   description  String
-  status       Int
+  status       String
   created_date DateTime @default(now())
   updated_date DateTime @updatedAt
   user         Users    @relation(fields: [user_id], references: [ID], onDelete: Cascade)
