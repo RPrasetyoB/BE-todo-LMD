@@ -46,9 +46,9 @@ When a user successfully login, the API server generates a JWT token and returns
 
 #### API root : <br>
 
-![Screenshot_8.jpg](C:\Users\sumit\OneDrive\Desktop\Screenshot_8.jpg)
+![Screenshot_8](https://github.com/RPrasetyoB/BE-todo-LMD/assets/129088807/05ba3cce-d902-40c1-904d-94536681665c)
 
-#### #### Deployment:
+#### Deployment:
 
 [BE-Server](https://us-central1-develop-2c606.cloudfunctions.net/be_todo)
 
