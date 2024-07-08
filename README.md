@@ -68,13 +68,13 @@ Follow these steps to use the API server:
 - **Clone the Repository**: Clone the API server repository from GitHub to your local machine.
   
   ```bash
-  git clone https://github.com/RPrasetyoB/payment.git
+  git clone https://github.com/RPrasetyoB/BE-todo-LMD.git
   ```
 
 - **Navigate to the cloned directorys**:
   
   ```bash
-  cd payment
+  cd BE-todo-LMD
   ```
 
 - **Set Up Environment Variables**: Set `.env` according as `.env.example`
